@@ -6442,6 +6442,10 @@ with pkgs;
     inherit (darwin.apple_sdk.frameworks) Security;
   };
 
+  wiibafu = callPackage ../tools/backup/wiibafu {
+    inherit (qt5) qmake wrapQtAppsHook;
+  };
+
   xlogo = callPackage ../tools/X11/xlogo { };
 
   xmlbeans = callPackage ../tools/misc/xmlbeans { };
