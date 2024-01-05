@@ -2622,6 +2622,7 @@ with pkgs;
   ### APPLICATIONS/EMULATORS
 
   _86Box = callPackage ../applications/emulators/86box { };
+  _86BoxManager = callPackage ../applications/emulators/86box-manager { };
 
   _86Box-with-roms = _86Box.override {
     unfreeEnableRoms = true;
