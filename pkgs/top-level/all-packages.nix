@@ -5584,12 +5584,45 @@ with pkgs;
   python2Full = python2.override {
     self = python2Full;
     pythonAttr = "python2Full";
-    x11Support = true;
   };
   python27Full = python27.override {
     self = python27Full;
     pythonAttr = "python27Full";
-    x11Support = true;
+  };
+  python3Full = python3.override {
+    self = python3Full;
+    pythonAttr = "python3Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python38Full = python38.override {
+    self = python38Full;
+    pythonAttr = "python38Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python310Full = python310.override {
+    self = python310Full;
+    pythonAttr = "python310Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python311Full = python311.override {
+    self = python311Full;
+    pythonAttr = "python311Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python312Full = python312.override {
+    self = python312Full;
+    pythonAttr = "python312Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python313Full = python313.override {
+    self = python313Full;
+    pythonAttr = "python313Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
+  };
+  python314Full = python314.override {
+    self = python314Full;
+    pythonAttr = "python314Full";
+    bluezSupport = lib.meta.availableOn stdenv.hostPlatform bluez;
   };
 
   # https://py-free-threading.github.io
@@ -5612,6 +5645,7 @@ with pkgs;
   pythonInterpreters = callPackage ./../development/interpreters/python { };
   inherit (pythonInterpreters)
     python27
+    python38
     python310
     python311
     python312
@@ -5629,6 +5663,7 @@ with pkgs;
 
   # Python package sets.
   python27Packages = python27.pkgs;
+  python38Packages = python38.pkgs;
   python310Packages = python310.pkgs;
   python311Packages = python311.pkgs;
   python312Packages = recurseIntoAttrs python312.pkgs;

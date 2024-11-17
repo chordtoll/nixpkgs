@@ -50,6 +50,8 @@ sets are
 
 * `pkgs.python27Packages`
 * `pkgs.python3Packages`
+* `pkgs.python38Packages`
+* `pkgs.python39Packages`
 * `pkgs.python310Packages`
 * `pkgs.python311Packages`
 * `pkgs.python312Packages`
