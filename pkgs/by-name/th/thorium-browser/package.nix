@@ -156,10 +156,10 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  postPatchMkspecs = ''
-    substituteInPlace $out/bin/..thorium-shell-wrapped-wrapped \
-      --replace /opt $out/opt
-  '';
+  #postPatchMkspecs = ''
+  #  substituteInPlace $out/bin/..thorium-shell-wrapped-wrapped \
+  #    --replace /opt $out/opt
+  #'';
 
   meta = with lib; {
     description = "Compiler-optimized Chromium fork";
