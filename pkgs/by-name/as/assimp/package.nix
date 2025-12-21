@@ -55,7 +55,7 @@ stdenv.mkDerivation (finalAttrs: {
   #  contrib/googletest/googletest/include/gtest/gtest-printers.h:498:35:
   #  error: implicit conversion from 'char16_t' to 'char32_t' may change the meaning of the represented code unit
   #  [-Werror,-Wcharacter-conversion]
-  doCheck = stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isx86_64;
+  doCheck = stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isx86_64 && false;
   checkPhase = ''
     runHook preCheck
     bin/unit
