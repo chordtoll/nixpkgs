@@ -28,6 +28,7 @@ stdenv.mkDerivation {
     leaveDotGit = true;
     deepClone = true;
     postFetch = ''
+      echo "$out"
       cd "$out"
       mkdir .nix-files
       git rev-parse --short=12 HEAD > .nix-files/REV_SHORT
