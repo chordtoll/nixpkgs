@@ -32,6 +32,7 @@ stdenv.mkDerivation {
       cd "$out"
       mkdir .nix-files
       git rev-parse --short=12 HEAD > .nix-files/REV_SHORT
+      git describe --all
       git describe --match initial-commit | cut -d- -f3 > .nix-files/REV_NUM
       find "$out" -name .git -print0 | xargs -0 rm -rf
     '';
