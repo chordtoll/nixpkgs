@@ -22,8 +22,6 @@ stdenv.mkDerivation {
   pname = "gn";
   inherit version;
 
-  rev_num = if rev == "5d0a4153b0bcc86c5a23310d5b648a587be3c56d" then "2279" else "a";
-
   src = fetchgit {
     url = "https://gn.googlesource.com/gn";
     inherit rev hash;
@@ -34,7 +32,7 @@ stdenv.mkDerivation {
       cd "$out"
       mkdir .nix-files
       git rev-parse --short=12 HEAD > .nix-files/REV_SHORT
-      echo "$rev_num" > .nix-files/REV_NUM
+      [ `cat .nix-files/REV_SHORT` == "5d0a4153b0bc" ] && ( echo "2279" > .nix-files/REV_NUM) || echo NO REV `cat .nix-files/REV_SHORT`
       find "$out" -name .git -print0 | xargs -0 rm -rf
     '';
   };
