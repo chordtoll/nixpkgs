@@ -22,18 +22,19 @@ stdenv.mkDerivation {
   pname = "gn";
   inherit version;
 
+  rev_num = if rev == "5d0a4153b0bcc86c5a23310d5b648a587be3c56d" then "2279" else "a"
+
   src = fetchgit {
     url = "https://gn.googlesource.com/gn";
     inherit rev hash;
     leaveDotGit = true;
     deepClone = true;
     postFetch = ''
-      echo "$out"
+      echo "$rev"
       cd "$out"
       mkdir .nix-files
       git rev-parse --short=12 HEAD > .nix-files/REV_SHORT
-      git describe --all
-      git describe --match initial-commit | cut -d- -f3 > .nix-files/REV_NUM
+      echo "$rev_num" > .nix-files/REV_NUM
       find "$out" -name .git -print0 | xargs -0 rm -rf
     '';
   };
