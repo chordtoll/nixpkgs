@@ -35,6 +35,7 @@ stdenv.mkDerivation {
       cat .nix-files/REV_SHORT
       [ `cat .nix-files/REV_SHORT` == "5d0a4153b0bc" ] && ( echo "2279" > .nix-files/REV_NUM)
       [ `cat .nix-files/REV_SHORT` == "81b24e01531e" ] && ( echo "2285" > .nix-files/REV_NUM)
+      [ `cat .nix-files/REV_SHORT` == "07d3c6f4dc29" ] && ( echo "2287" > .nix-files/REV_NUM)
       cat .nix-files/REV_NUM
       find "$out" -name .git -print0 | xargs -0 rm -rf
     '';
