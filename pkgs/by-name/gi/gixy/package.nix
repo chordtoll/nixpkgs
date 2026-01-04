@@ -41,7 +41,7 @@ python.pkgs.buildPythonApplication rec {
     # https://github.com/yandex/gixy/pull/146
     (fetchpatch2 {
       url = "https://github.com/yandex/gixy/compare/6f68624a7540ee51316651bda656894dc14c9a3e...b1c6899b3733b619c244368f0121a01be028e8c2.patch";
-      hash = "sha256-6VUF2eQ2Haat/yk8I5qIXhHdG9zLQgEXJMLfe25OKEo=";
+      hash = "sha256-jAF5WxMwTKTiCvEQF2xQnTBp6S2Yzpgq6mPugVKQksM=";
     })
     ./python3.13-compat.patch
   ];
